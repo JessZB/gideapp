@@ -52,8 +52,8 @@ app.use(loginRouter);
 app.use(usersRouter);
 app.use(patientsRouter);
 
-app.use(express.static(join(__dirname, "../client/build")))
+app.use(express.static(join(__dirname, "../build")))
 
 app.listen(PORT, () => {
-  console.log(`Server is running on ${PORT}}`);
+  console.log(`Server is running on ${PORT}`);
 });
