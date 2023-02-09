@@ -16,7 +16,7 @@ dotenv.config();
 // Para usar objetos JSON, texto y cookies
 app.use(
   cors({
-    origin: "https://gideapp-production.up.railway.app",
+    origin: "http://localhost:4000",
     optionsSuccessStatus: 200,
     credentials: true,
   })
