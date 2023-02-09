@@ -16,7 +16,6 @@ dotenv.config();
 // Para usar objetos JSON, texto y cookies
 app.use(
   cors({
-    origin: "http://localhost:4000",
     optionsSuccessStatus: 200,
     credentials: true,
   })
@@ -52,9 +51,9 @@ app.use(loginRouter);
 app.use(usersRouter);
 app.use(patientsRouter);
 
-app.use("/",express.static(join(__dirname, "../build")))
-app.use("/login",express.static(join(__dirname, "../build")))
-app.use("/api/*",express.static(join(__dirname, "../build")))
+// app.use("/",express.static(join(__dirname, "../build")))
+// app.use("/login",express.static(join(__dirname, "../build")))
+// app.use("/api/*",express.static(join(__dirname, "../build")))
 
 app.listen(PORT, () => {
   console.log(`Server is running on ${PORT}`);
