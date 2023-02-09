@@ -16,7 +16,7 @@ dotenv.config();
 // Para usar objetos JSON, texto y cookies
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: "https://gideapp-production.up.railway.app",
     optionsSuccessStatus: 200,
     credentials: true,
   })
@@ -53,6 +53,8 @@ app.use(usersRouter);
 app.use(patientsRouter);
 
 app.use("/",express.static(join(__dirname, "../build")))
+app.use("/login",express.static(join(__dirname, "../build")))
+app.use("/api/*",express.static(join(__dirname, "../build")))
 
 app.listen(PORT, () => {
   console.log(`Server is running on ${PORT}`);
