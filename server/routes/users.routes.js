@@ -1,24 +1,26 @@
 import { Router } from "express";
 import {
+  confirmPassword,
   createUser,
   deleteUser,
   getUser,
   getUsers,
   updateUser,
+  userExist,
 } from "../controllers/users.controllers.js";
 const router = Router();
 
 // Rutas de Usuario
 
 // Obtener usuarios
-router.get("/usuarios", getUsers);
+router.get("/api/usuarios", getUsers);
 // Obtener usuario
-router.get("/usuarios/:id", getUser);
+router.get("/api/usuarios/:id", getUser);
 // Crear usuario
-router.post("/usuarios", createUser);
+router.post("/api/usuarios", userExist, createUser);
 // Actualizar usuario
-router.put("/usuarios/:id", updateUser);
+router.put("/api/usuarios/:id",userExist, updateUser);
 // Eliminar usuario
-router.delete("/usuarios/:id", deleteUser);
+router.delete("/api/usuarios/:id", deleteUser);
 
 export default router;

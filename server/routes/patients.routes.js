@@ -3,22 +3,25 @@ import {
   createPatient,
   deletePatient,
   getPatient,
+  getPatientByCI,
   getPatients,
+  patientExist,
   updatePatient,
 } from "../controllers/patients.controllers.js";
 const router = Router();
 
-// Rutas de Usuario
+// Rutas de paciente
 
 // Obtener pacientes
-router.get("/pacientes", getPatients);
+router.get("/api/pacientes", getPatients);
 // Obtener paciente
-router.get("/pacientes/:id", getPatient);
+router.get("/api/pacientes/:id", getPatient);
+router.get("/api/pacientesci/:ci", getPatientByCI);
 // Crear paciente
-router.post("/pacientes", createPatient);
+router.post("/api/pacientes", patientExist, createPatient);
 // Actualizar paciente
-router.put("/pacientes/:id", updatePatient);
+router.put("/api/pacientes/:id", patientExist, updatePatient);
 // Eliminar paciente
-router.delete("/pacientes/:id", deletePatient);
+router.delete("/api/pacientes/:id", deletePatient);
 
 export default router;
